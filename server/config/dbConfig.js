@@ -7,7 +7,9 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
-    family: 4
+    family: 4,
+    retryWrites: true,
+    w: 'majority'
 }).then(() => {
     console.log('MongoDb Connected Successfully');
 }).catch((err) => {
