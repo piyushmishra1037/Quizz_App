@@ -12,8 +12,8 @@ router.post("/register", async (req, res) => {
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists) {
       return res
-        .status(200)
-        .send({ message: "User already exists", success: false });
+        .status(400)
+        .send({ message: "Email already registered", success: false });
     }
 
     // hash password

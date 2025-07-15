@@ -18,7 +18,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORT || 5007;
 const path = require("path");
 __dirname = path.resolve();
 
